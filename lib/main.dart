@@ -7,6 +7,13 @@ import 'package:ditonton/presentation/pages/popular_movies_page.dart';
 import 'package:ditonton/presentation/pages/search_page.dart';
 import 'package:ditonton/presentation/pages/top_rated_movies_page.dart';
 import 'package:ditonton/presentation/pages/watchlist_movies_page.dart';
+import 'package:ditonton/presentation/provider/TV/airing_today_tv_notifier.dart';
+import 'package:ditonton/presentation/provider/TV/on_the_air_tv_notifier.dart';
+import 'package:ditonton/presentation/provider/TV/popular_tvs_notifier.dart';
+import 'package:ditonton/presentation/provider/TV/tv_detail_notifier.dart';
+import 'package:ditonton/presentation/provider/TV/tv_list_notifier.dart';
+import 'package:ditonton/presentation/provider/TV/tv_search_notifier.dart';
+import 'package:ditonton/presentation/provider/TV/watchlist_tv_notifier.dart';
 import 'package:ditonton/presentation/provider/movie_detail_notifier.dart';
 import 'package:ditonton/presentation/provider/movie_list_notifier.dart';
 import 'package:ditonton/presentation/provider/movie_search_notifier.dart';
@@ -45,6 +52,27 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (_) => di.locator<WatchlistMovieNotifier>(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => di.locator<TVListNotifier>(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => di.locator<TVDetailNotifier>(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => di.locator<TVSearchNotifier>(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => di.locator<WatchlistTVNotifier>(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => di.locator<PopularTVsNotifier>(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => di.locator<OnTheAirTVNotifier>(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => di.locator<AiringTodayTVNotifier>(),
         ),
       ],
       child: MaterialApp(
