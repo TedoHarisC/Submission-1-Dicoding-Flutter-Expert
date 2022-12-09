@@ -18,7 +18,6 @@ class Season extends Equatable {
   int seasonNumber;
 
   @override
-  // TODO: implement props
   List<Object?> get props => [
         id,
         episodeCount,
