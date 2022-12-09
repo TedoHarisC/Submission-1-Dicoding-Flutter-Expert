@@ -39,6 +39,7 @@ final testTv = TV(
     voteCount: 1765);
 
 final testMovieList = [testMovie];
+final testTVList = [testTv];
 
 final testMovieDetail = MovieDetail(
   adult: false,
