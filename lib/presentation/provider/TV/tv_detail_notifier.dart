@@ -69,6 +69,8 @@ class TVDetailNotifier extends ChangeNotifier {
             _tvRecommendations = tvs;
           },
         );
+        _tvDetailState = RequestState.Loaded;
+        notifyListeners();
       },
     );
   }

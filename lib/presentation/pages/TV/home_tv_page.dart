@@ -7,12 +7,15 @@ import 'package:ditonton/presentation/pages/TV/detail_tv_page.dart';
 import 'package:ditonton/presentation/pages/TV/on_the_air_tv_page.dart';
 import 'package:ditonton/presentation/pages/TV/popular_tv_page.dart';
 import 'package:ditonton/presentation/pages/TV/search_tv_page.dart';
+import 'package:ditonton/presentation/pages/TV/watchlist_tv_page.dart';
+import 'package:ditonton/presentation/pages/about_page.dart';
+import 'package:ditonton/presentation/pages/home_movie_page.dart';
 import 'package:ditonton/presentation/provider/TV/tv_list_notifier.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class HomeTVPage extends StatefulWidget {
-  static const routeName = '/tv_home';
+  static const ROUTE_NAME = '/tv_home';
 
   const HomeTVPage({super.key});
 
@@ -45,13 +48,13 @@ class _HomeTVPageState extends State<HomeTVPage> {
               accountName: Text('Ditonton TV Series'),
               accountEmail: Text('ditonton@dicoding.com'),
             ),
-            // ListTile(
-            //   leading: Icon(Icons.movie),
-            //   title: Text('Movies'),
-            //   onTap: () {
-            //     Navigator.pushNamed(context, HomePage);
-            //   },
-            // ),
+            ListTile(
+              leading: Icon(Icons.movie),
+              title: Text('Movies'),
+              onTap: () {
+                Navigator.pushNamed(context, HomeMoviePage.ROUTE_NAME);
+              },
+            ),
             ListTile(
               leading: Icon(Icons.save_alt),
               title: Text('TV'),
@@ -59,13 +62,20 @@ class _HomeTVPageState extends State<HomeTVPage> {
                 Navigator.pop(context);
               },
             ),
-            // ListTile(
-            //   onTap: () {
-            //     Navigator.pushNamed(context, AboutPage.ROUTE_NAME);
-            //   },
-            //   leading: Icon(Icons.info_outline),
-            //   title: Text('About'),
-            // ),
+            ListTile(
+              leading: Icon(Icons.save_alt),
+              title: Text('Watchlist TV'),
+              onTap: () {
+                Navigator.pushNamed(context, WatchlistTVPage.ROUTE_NAME);
+              },
+            ),
+            ListTile(
+              onTap: () {
+                Navigator.pushNamed(context, AboutPage.ROUTE_NAME);
+              },
+              leading: Icon(Icons.info_outline),
+              title: Text('About'),
+            ),
           ],
         ),
       ),
@@ -201,7 +211,7 @@ class TVList extends StatelessWidget {
               onTap: () {
                 Navigator.pushNamed(
                   context,
-                  DetailTVPage.routeName,
+                  DetailTVPage.ROUTE_NAME,
                   arguments: tv.id,
                 );
               },
