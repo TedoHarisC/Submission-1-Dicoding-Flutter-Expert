@@ -80,7 +80,7 @@ class _HomeTVPageState extends State<HomeTVPage> {
         ),
       ),
       appBar: AppBar(
-        title: Text('Ditonton'),
+        title: Text('Ditonton for TV Series'),
         actions: [
           IconButton(
             onPressed: () {
