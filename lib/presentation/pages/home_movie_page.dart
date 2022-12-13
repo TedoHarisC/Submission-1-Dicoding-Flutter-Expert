@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ditonton/common/constants.dart';
 import 'package:ditonton/domain/entities/movie.dart';
 import 'package:ditonton/presentation/pages/TV/home_tv_page.dart';
+import 'package:ditonton/presentation/pages/TV/watchlist_tv_page.dart';
 import 'package:ditonton/presentation/pages/about_page.dart';
 import 'package:ditonton/presentation/pages/movie_detail_page.dart';
 import 'package:ditonton/presentation/pages/popular_movies_page.dart';
@@ -59,9 +60,16 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
             ),
             ListTile(
               leading: Icon(Icons.save_alt),
-              title: Text('Watchlist'),
+              title: Text('Watchlist Movie'),
               onTap: () {
                 Navigator.pushNamed(context, WatchlistMoviesPage.ROUTE_NAME);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.save_alt),
+              title: Text('Watchlist TV'),
+              onTap: () {
+                Navigator.pushNamed(context, WatchlistTVPage.ROUTE_NAME);
               },
             ),
             ListTile(
