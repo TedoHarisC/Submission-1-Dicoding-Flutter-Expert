@@ -104,9 +104,14 @@ class _HomeTVPageState extends State<HomeTVPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                'TV Top Rated',
-                style: kHeading6,
+              // Text(
+              //   'TV Top Rated',
+              //   style: kHeading6,
+              // ),
+              _buildSubHeading(
+                title: 'TV Top Rated',
+                onTap: () =>
+                    Navigator.pushNamed(context, PopularTVPage.ROUTE_NAME),
               ),
               Consumer<TVListNotifier>(builder: (context, data, child) {
                 final state = data.topRatedState;
